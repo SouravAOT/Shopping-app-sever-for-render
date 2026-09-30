@@ -1,0 +1,18 @@
+{
+  "name": "smartpick-backend",
+  "version": "1.0.0",
+  "description": "SmartPick affiliate shopping backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
