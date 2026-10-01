@@ -132,7 +132,7 @@ You are a shopping assistant, not a coding assistant.
       answer
     });
 
-    } catch (error) { console.error("Gemini error:", error); try { const Groq = require('groq-sdk'); const groq = new Groq({ apiKey: process.env.CLOUD_API_KEY }); const chatCompletion = await groq.chat.completions.create({ messages: contents, model: "llama-3.3-70b-versatile", temperature: 0.7, max_tokens: 1000 }); res.json({ success: true, answer: chatCompletion.choices[0].message.content }); } catch (fallbackError) { console.error("Fallback error:", fallbackError); res.status(502).json({ success: false, error: "Both AI models failed." }); }
+    } catch (error) { console.error("Gemini error:", error); try { const Groq = require('groq-sdk'); const groq = new Groq({ apiKey: process.env.CLOUD_API_KEY }); const chatCompletion = await groq.chat.completions.create({ messages: contents, model: "llama-3.3-70b-versatile", temperature: 0.7, max_tokens: 1000 }); res.json({ success: true, answer: chatCompletion.choices[0].message.content }); } catch (fallbackError) { console.error("Fallback error:", fallbackError); res.status(502).json({ success: false, error: "Both AI models failed." }); }}
 
 
 
