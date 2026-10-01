@@ -132,16 +132,8 @@ You are a shopping assistant, not a coding assistant.
       answer
     });
 
-  } catch (error) {
-    console.error("Gemini error:", error);
+} catch (error) { console.error("Gemini error:", error); const status = /quota|rate|resource_exhausted|429|503|unavailable/i.test(error.message || "") ? 503 : 500; if (status === 503) { try { const fallbackResponse = await otherModel.generateContent(contents); res.json({ success: true, reply: fallbackResponse.text }); } catch (fallbackError) { console.error("Fallback error:", fallbackError); res.status(502).json({ success: false, error: "Both AI models failed." }); } } else { res.status(status).json({ success: false, error: "AI request failed.", details: error.message }); } }
 
-    res.status(500).json({
-      success: false,
-      error: "AI request failed.",
-      details: error.message
-    });
-  }
-});
 
 /* =========================
    AFFILIATE
