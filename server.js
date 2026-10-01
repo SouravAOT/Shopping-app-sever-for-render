@@ -16,7 +16,7 @@ const GEMINI_MODEL =
   process.env.GEMINI_MODEL || "gemini-3.8-flash";
 
 const GROQ_MODEL =
-  process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+  process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
 const DAILY_AI_LIMIT =
   Number(process.env.DAILY_AI_LIMIT || 1000);
